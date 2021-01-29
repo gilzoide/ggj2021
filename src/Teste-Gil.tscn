@@ -71,14 +71,34 @@ shape = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33421, 0 )
 collision_layer = 5
 script = ExtResource( 4 )
+object_to_outline_path = NodePath("MeshInstance")
 
 [node name="MeshInstance" type="MeshInstance" parent="InteractableSphere"]
 transform = Transform( 1.03078, 0, -0.133418, 0, 1, 0, 0.128363, 0, 0.991727, 0, 0, 0 )
+material_override = ExtResource( 3 )
 mesh = SubResource( 8 )
-material/0 = ExtResource( 3 )
+material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="InteractableSphere"]
+shape = SubResource( 9 )
+
+[node name="InteractableSphere2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654352, 1.33421, -0.761181 )
+collision_layer = 5
+script = ExtResource( 4 )
+object_to_outline_path = NodePath("MeshInstance")
+
+[node name="MeshInstance" type="MeshInstance" parent="InteractableSphere2"]
+transform = Transform( 1.03078, 0, -0.133418, 0, 1, 0, 0.128363, 0, 0.991727, 0, 0, 0 )
+material_override = ExtResource( 3 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractableSphere2"]
 shape = SubResource( 9 )
 [connection signal="interact" from="InteractableSphere" to="InteractableSphere" method="queue_free"]
 [connection signal="start_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ true ]]
 [connection signal="stop_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ false ]]
+[connection signal="interact" from="InteractableSphere2" to="InteractableSphere2" method="queue_free"]
+[connection signal="start_interactable" from="InteractableSphere2" to="InteractableSphere2" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="InteractableSphere2" to="InteractableSphere2" method="set_outline_enabled" binds= [ false ]]
