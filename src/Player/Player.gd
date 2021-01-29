@@ -6,45 +6,70 @@ export(float) var speed = 5
 export(float) var rotate_speed = 45
 export var gravity = Vector3.DOWN * 10
 var velocity = Vector3.ZERO
+var mouse_sensitivity = 0.002
+
+onready var camera = $Pivot/Camera
 
 var focused_interactable_object : Node = null
 onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	set_process_input(true)
 	set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
 	velocity += gravity * delta
 	get_input(delta)
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide(velocity, Vector3.UP, true)
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		$Pivot.rotate_x(event.relative.y * mouse_sensitivity)
+		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
+	
+	if event.is_action_pressed("any_click"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			get_tree().set_input_as_handled()
+	
+	if event.is_action_pressed("camera_sensitivity_down"):
+		mouse_sensitivity /= 5
+		print("Camera sensitivity: " + str(mouse_sensitivity))
+	
+	if event.is_action_pressed("camera_sensitivity_up"):
+		mouse_sensitivity *= 5
+		print("Camera sensitivity: " + str(mouse_sensitivity))
+	
 	if event.is_action_pressed("interact", false):
 		try_interact()
+	
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-func get_input(delta):
-	var delta_rotation: float = 0
+func get_input(_delta):
 	var vy = velocity.y
+	var animate: bool = false
 	velocity = Vector3.ZERO
-	if Input.is_action_pressed("move_left"):
-		delta_rotation += rotate_speed
-	if Input.is_action_pressed("move_right"):
-		delta_rotation -= rotate_speed
-	if delta_rotation:
-		rotate_y(deg2rad(delta_rotation * delta))
-
-	var movement: float = 0
 	if Input.is_action_pressed("move_front"):
-		velocity += transform.basis.z * speed
-		movement += 1
+		velocity -= camera.global_transform.basis.z * speed
+		animate = true
 	if Input.is_action_pressed("move_back"):
-		velocity += -transform.basis.z * speed
-		movement -= 1
+		velocity += camera.global_transform.basis.z * speed
+		animate = true
+	if Input.is_action_pressed("move_left"):
+		velocity -= camera.global_transform.basis.x * speed
+		animate = true
+		#delta_rotation += rotate_speed
+	if Input.is_action_pressed("move_right"):
+		velocity += camera.global_transform.basis.x * speed
+		animate = true
+		#delta_rotation -= rotate_speed
 
 	velocity.y = vy
 
-	if movement:
+	if animate:
 		animation_player.play("Moving")
 
 func try_interact():
@@ -58,7 +83,7 @@ func focus_object(body : Node) -> void:
 	if focused_interactable_object.has_signal("start_interactable"):
 		focused_interactable_object.emit_signal("start_interactable")
 
-func unfocus_object(body : Node) -> void:
+func unfocus_object(_body : Node) -> void:
 	if focused_interactable_object.has_signal("stop_interactable"):
 		focused_interactable_object.emit_signal("stop_interactable")
 	focused_interactable_object = null
