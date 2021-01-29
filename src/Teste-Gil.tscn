@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/checkers2x2.png" type="Texture" id=2]
+[ext_resource path="res://Materials/TestSphereMaterial.tres" type="Material" id=3]
+[ext_resource path="res://Scripts/InteractableBody.gd" type="Script" id=4]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 50, 50 )
@@ -10,9 +12,9 @@ size = Vector2( 50, 50 )
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 10, 10, 10 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=3]
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="CubeMesh" id=4]
 
 [sub_resource type="BoxShape" id=5]
 
@@ -23,10 +25,17 @@ size = Vector3( 1, 1, 1 )
 [sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5 )
 
+[sub_resource type="SphereMesh" id=8]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="SphereShape" id=9]
+radius = 0.3
+
 [node name="Spatial" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180043, 1.1001, 0.0855904 )
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -4.547, 1.1001, 0.437754 )
 
 [node name="Ground" type="StaticBody" parent="."]
 
@@ -36,13 +45,13 @@ material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
 transform = Transform( 25, 0, 0, 0, 0.1, 0, 0, 0, 25, 0, 0, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Cube" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10008, -5.213 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Cube"]
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube"]
@@ -57,3 +66,19 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Ramp"]
 shape = SubResource( 7 )
+
+[node name="InteractableSphere" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33421, 0 )
+collision_layer = 5
+script = ExtResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="InteractableSphere"]
+transform = Transform( 1.03078, 0, -0.133418, 0, 1, 0, 0.128363, 0, 0.991727, 0, 0, 0 )
+mesh = SubResource( 8 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractableSphere"]
+shape = SubResource( 9 )
+[connection signal="interact" from="InteractableSphere" to="InteractableSphere" method="queue_free"]
+[connection signal="start_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ false ]]
