@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=3]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Moving"
@@ -27,7 +27,7 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
