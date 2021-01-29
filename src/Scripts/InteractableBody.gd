@@ -1,10 +1,16 @@
 extends CollisionObject
 
-const outline_material : ShaderMaterial = preload("res://Materials/Outline3DMaterial.tres")
-
 signal interact()
 signal start_interactable()
 signal stop_interactable()
 
+export(NodePath) var object_to_outline_path = null
+onready var outline_other_object = get_node("/root/OutlineOtherObject")
+
 func set_outline_enabled(enable : bool):
-	outline_material.set_shader_param("enable", enable)
+	if enable:
+		var object_to_outline = get_node(object_to_outline_path) if object_to_outline_path else null
+		if object_to_outline:
+			outline_other_object.set_object(object_to_outline)
+	else:
+		outline_other_object.set_object(null)

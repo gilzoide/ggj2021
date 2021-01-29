@@ -19,6 +19,10 @@ config/name="GGJ Online 2021"
 run/main_scene="res://Teste-Gil.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+OutlineOtherObject="*res://Player/OutlineOtherObject.tscn"
+
 [input]
 
 move_front={
