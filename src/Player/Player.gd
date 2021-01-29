@@ -7,7 +7,7 @@ export(float) var rotate_speed = 45
 export var gravity = Vector3.DOWN * 10
 var velocity = Vector3.ZERO
 
-var interactable_object : Node = null
+var focused_interactable_object : Node = null
 onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
@@ -48,18 +48,25 @@ func get_input(delta):
 		animation_player.play("Moving")
 
 func try_interact():
-	if interactable_object and interactable_object.has_signal("interact"):
-		interactable_object.emit_signal("interact")
+	if focused_interactable_object and focused_interactable_object.has_signal("interact"):
+		focused_interactable_object.emit_signal("interact")
+
+func focus_object(body : Node) -> void:
+	if focused_interactable_object:
+		unfocus_object(body)
+	focused_interactable_object = body
+	if focused_interactable_object.has_signal("start_interactable"):
+		focused_interactable_object.emit_signal("start_interactable")
+
+func unfocus_object(body : Node) -> void:
+	if focused_interactable_object.has_signal("stop_interactable"):
+		focused_interactable_object.emit_signal("stop_interactable")
+	focused_interactable_object = null
 
 func _on_InteractArea_body_entered(body: PhysicsBody) -> void:
 	if body.get_collision_layer_bit(INTERACTABLE_COLLISION_BIT):
-		interactable_object = body
-		if interactable_object.has_signal("start_interactable"):
-			interactable_object.emit_signal("start_interactable")
-
+		focus_object(body)
 
 func _on_InteractArea_body_exited(body: PhysicsBody) -> void:
-	if body == interactable_object:
-		if interactable_object.has_signal("stop_interactable"):
-			interactable_object.emit_signal("stop_interactable")
-		interactable_object = null
+	if body == focused_interactable_object:
+		unfocus_object(body)
