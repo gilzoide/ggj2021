@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Models/Character/Hubert.glb" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/InteractableBody.gd" type="Script" id=2]
 [ext_resource path="res://Textures/Emojis/surprised-5093.png" type="Texture" id=3]
 [ext_resource path="res://Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/AutoPlayAnimation.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.476252
@@ -24,6 +25,9 @@ emission_on_uv2 = false
 collision_layer = 5
 script = ExtResource( 2 )
 object_to_outline_path = NodePath("Armature/Skeleton/Cube")
+
+[node name="AnimationPlayer" parent="." index="1"]
+script = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.832726, 0 )
