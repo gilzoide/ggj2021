@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/checkers2x2.png" type="Texture" id=2]
 [ext_resource path="res://Materials/TestSphereMaterial.tres" type="Material" id=3]
 [ext_resource path="res://Scripts/InteractableBody.gd" type="Script" id=4]
 [ext_resource path="res://Teste-Gil.tres" type="Environment" id=5]
+[ext_resource path="res://Models/ReadyToUse/Hubert.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 50, 50 )
@@ -182,6 +183,9 @@ environment = ExtResource( 5 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
 autoplay = "Sky Color"
 "anims/Sky Color" = SubResource( 11 )
+
+[node name="Hubert" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.408623, 1.10282 )
 [connection signal="interact" from="InteractableSphere" to="InteractableSphere" method="queue_free"]
 [connection signal="start_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ true ]]
 [connection signal="stop_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ false ]]
