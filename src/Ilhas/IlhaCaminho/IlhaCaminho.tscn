@@ -9,6 +9,7 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=7]
 [ext_resource path="res://Models/ReadyToUse/Bush.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Materials/Water.tres" type="Material" id=9]
+[ext_resource path="res://Models/ReadyToUse/CoinCaminho.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -16,8 +17,6 @@ mode = 0
 textures = [ [  ], [  ] ]
 
 [sub_resource type="PlaneMesh" id=2]
-
-[sub_resource type="CubeMesh" id=3]
 
 [node name="Spatial" type="Spatial"]
 
@@ -959,7 +958,5 @@ material/0 = ExtResource( 9 )
 [node name="Bush" parent="CorrectWay" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.8695, -0.0658479, 30.2825 )
 
-[node name="MeshInstance" type="MeshInstance" parent="CorrectWay"]
+[node name="CoinCaminho" parent="CorrectWay" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.946, 0.843596, -8.20538 )
-mesh = SubResource( 3 )
-material/0 = null
