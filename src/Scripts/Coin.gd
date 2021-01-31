@@ -9,6 +9,7 @@ enum Ilha {
 	IlhaCaminho,
 	IlhaEscura,
 	IlhaEstatua,
+	IlhaCentral,
 }
 export(Ilha) var ilha
 
@@ -26,3 +27,4 @@ func set_outline_enabled(enable : bool):
 func mark_ilha_done() -> void:
 	PlayerVars.set_ilha_done(ilha)
 	queue_free()
+	PlayerVars.viaja_ilha(PlayerVars.Ilha.IlhaCentral)

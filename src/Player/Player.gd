@@ -2,7 +2,14 @@ extends KinematicBody
 
 const INTERACTABLE_COLLISION_BIT = 2
 
-export(PlayerVars.Ilha) var ilha
+enum Ilha {
+	IlhaCaminho,
+	IlhaEscura,
+	IlhaEstatua,
+	IlhaCentral,
+}
+
+export(Ilha) var ilha
 export(float) var speed = 5
 export(float) var rotate_speed = 45
 export var gravity = Vector3.DOWN * 10
