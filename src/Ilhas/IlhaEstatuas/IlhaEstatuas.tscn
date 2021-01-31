@@ -1,12 +1,230 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Ilhas/ChaoTeste.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
+[ext_resource path="res://Ilhas/IlhaEstatuas/terrain/data.hterrain" type="Resource" id=3]
+[ext_resource path="res://Ilhas/IlhaEstatuas/IlhaEstatuas.gd" type="Script" id=4]
+[ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/InteractableBody.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/RespawnZone.gd" type="Script" id=7]
+[ext_resource path="res://Models/ReadyToUse/PalmTree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Models/ReadyToUse/Stone_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Models/ReadyToUse/Stone_2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Ilhas/IlhaEstatuas/statues/Statue1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Materials/Water.tres" type="Material" id=12]
+[ext_resource path="res://Ilhas/IlhaEstatuas/statues/Statue4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Ilhas/IlhaEstatuas/statues/Statue0.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Ilhas/IlhaEstatuas/statues/Statue2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Ilhas/IlhaEstatuas/statues/Statue3.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Ilhas/IlhaEstatuas/statues/Statue5.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Models/ReadyToUse/NormalTree.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Models/ReadyToUse/Stone_0.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Models/ReadyToUse/LongTree.tscn" type="PackedScene" id=20]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 5 )
+mode = 0
+textures = [ [  ], [  ] ]
+
+[sub_resource type="PlaneMesh" id=2]
+material = ExtResource( 12 )
+
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="BoxShape" id=4]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56309, 0, 0 )
-
-[node name="Ground2" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6406, 1.1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.641, 1, 0 )
+
+[node name="HTerrain" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -64 )
+script = ExtResource( 2 )
+ambient_wind = 0.0
+lod_scale = 2.0
+map_scale = Vector3( 1, 1, 1 )
+_terrain_data = ExtResource( 3 )
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "LowPoly"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource( 1 )
+
+[node name="Water" type="MeshInstance" parent="."]
+transform = Transform( 128, 0, 0, 0, 1, 0, 0, 0, 128, 0, -2, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Trees" type="Spatial" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+
+[node name="PalmTree" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.664, 0, 82.106 )
+
+[node name="PalmTree2" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.652, 0, 81.778 )
+
+[node name="PalmTree3" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.854, 0, 31.59 )
+
+[node name="PalmTree4" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.828, 0, -15.192 )
+
+[node name="PalmTree5" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33, 0, -69.82 )
+
+[node name="PalmTree7" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.99998, 0.0063355, 0, -0.0063355, 0.99998, -2.034, 0, 27.724 )
+
+[node name="PalmTree8" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.99998, 0.0063355, 0, -0.0063355, 0.99998, -32.32, 0, -55.96 )
+
+[node name="PalmTree9" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.99998, 0.0063355, 0, -0.0063355, 0.99998, -77.12, 0, -30.7 )
+
+[node name="PalmTree6" parent="Trees" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.646, 0, -43.5 )
+
+[node name="NormalTree" parent="Trees" instance=ExtResource( 18 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -56.756, 0, 55.34 )
+
+[node name="NormalTree2" parent="Trees" instance=ExtResource( 18 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -44.8704, 0, 45.6504 )
+
+[node name="NormalTree3" parent="Trees" instance=ExtResource( 18 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -56.5837, 0, 32.4082 )
+
+[node name="LongTree" parent="Trees" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.5087, 0, -58.4065 )
+
+[node name="Stones" type="Spatial" parent="."]
+
+[node name="Stone_2" parent="Stones" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7647, 0, 19.4886 )
+
+[node name="Stone_1" parent="Stones" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42887, 0, -12.1459 )
+
+[node name="Stone_5" parent="Stones" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45473, 9.53674e-07, -16.0601 )
+
+[node name="Stone_6" parent="Stones" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5323, 9.53674e-07, -20.9154 )
+
+[node name="Stone_7" parent="Stones" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89718, 0, 19.4591 )
+
+[node name="Stone_4" parent="Stones" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6496, 0, -7.06531 )
+
+[node name="Stone_3" parent="Stones" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3051, 0, 7.17529 )
+
+[node name="Stone_0" parent="Stones" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6263, 0, 23.4873 )
+
+[node name="RespawnZone" type="Area" parent="."]
+transform = Transform( 128, 0, 0, 0, 0.1, 0, 0, 0, 128, 0, -4, 0 )
+gravity_vec = Vector3( 0, -2, 0 )
+script = ExtResource( 7 )
+respawn_position = Vector3( -12.64, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RespawnZone"]
+shape = SubResource( 5 )
+
+[node name="Statues" type="Spatial" parent="."]
+
+[node name="Statue0" type="StaticBody" parent="Statues"]
+transform = Transform( 0.984583, 0, -0.17492, 0, 1, 0, 0.17492, 0, 0.984583, 4.564, 0, -21.102 )
+collision_layer = 5
+script = ExtResource( 6 )
+
+[node name="Statue" parent="Statues/Statue0" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 4.29153e-05, 0, 0.000299454 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Statues/Statue0"]
+transform = Transform( 1.2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.75, 0.25 )
+shape = SubResource( 4 )
+
+[node name="Statue1" type="StaticBody" parent="Statues"]
+transform = Transform( 0.597177, 0, -0.802109, 0, 1, 0, 0.802109, 0, 0.597177, 37.701, 0, -40.185 )
+collision_layer = 5
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Statues/Statue1"]
+transform = Transform( 1.2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.75, 0.25 )
+shape = SubResource( 4 )
+
+[node name="Statue" parent="Statues/Statue1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0 )
+
+[node name="Statue2" type="StaticBody" parent="Statues"]
+transform = Transform( -0.999671, 0, 0.0256709, 0, 1, 0, -0.0256709, 0, -0.999671, -5.245, 2.748, 30.91 )
+collision_layer = 5
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Statues/Statue2"]
+transform = Transform( 1.2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.75, 0.25 )
+shape = SubResource( 4 )
+
+[node name="Statue" parent="Statues/Statue2" instance=ExtResource( 15 )]
+
+[node name="Statue3" type="StaticBody" parent="Statues"]
+transform = Transform( -0.610228, 0, -0.792226, 0, 1, 0, 0.792226, 0, -0.610228, 17.99, 0.412, 20.884 )
+collision_layer = 5
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Statues/Statue3"]
+transform = Transform( 1.2, 0, 0, 0, 2, 0, 5.96046e-08, 0, 1, -1.90735e-06, 1.75, 0.25 )
+shape = SubResource( 4 )
+
+[node name="Statue" parent="Statues/Statue3" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 3.8743e-07, 0, 1, 0, -3.27826e-07, 0, 1, 0.000362396, -8.30591e-05, -2.28882e-05 )
+
+[node name="Statue4" type="StaticBody" parent="Statues"]
+transform = Transform( 0.414233, 0, 0.910171, 0, 1, 0, -0.910171, 0, 0.414233, -24.244, 0, -17.387 )
+collision_layer = 5
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Statues/Statue4"]
+transform = Transform( 1.2, 0, 0, 0, 2, 0, -2.98023e-08, 0, 1, 9.53674e-07, 1.75, 0.249998 )
+shape = SubResource( 4 )
+
+[node name="Statue" parent="Statues/Statue4" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, -4.76837e-07, 0, 1, 0, 4.76837e-07, 0, 1, 0.000231743, -1.90735e-06, -0.00021553 )
+
+[node name="Statue5" type="StaticBody" parent="Statues"]
+transform = Transform( -0.988777, 0, 0.149397, 0, 1, 0, -0.149397, 0, -0.988777, -6.911, 0, 16.511 )
+collision_layer = 5
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Statues/Statue5"]
+transform = Transform( 1.2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.75, 0.25 )
+shape = SubResource( 4 )
+
+[node name="Statue" parent="Statues/Statue5" instance=ExtResource( 17 )]
+[connection signal="body_entered" from="RespawnZone" to="RespawnZone" method="_on_RespawnZone_body_entered"]
+[connection signal="interact" from="Statues/Statue0" to="." method="button_pressed" binds= [ 0 ]]
+[connection signal="start_interactable" from="Statues/Statue0" to="Statues/Statue0" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="Statues/Statue0" to="Statues/Statue0" method="set_outline_enabled" binds= [ false ]]
+[connection signal="interact" from="Statues/Statue1" to="." method="button_pressed" binds= [ 1 ]]
+[connection signal="start_interactable" from="Statues/Statue1" to="Statues/Statue1" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="Statues/Statue1" to="Statues/Statue1" method="set_outline_enabled" binds= [ false ]]
+[connection signal="interact" from="Statues/Statue2" to="." method="button_pressed" binds= [ 2 ]]
+[connection signal="start_interactable" from="Statues/Statue2" to="Statues/Statue2" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="Statues/Statue2" to="Statues/Statue2" method="set_outline_enabled" binds= [ false ]]
+[connection signal="interact" from="Statues/Statue3" to="." method="button_pressed" binds= [ 3 ]]
+[connection signal="start_interactable" from="Statues/Statue3" to="Statues/Statue3" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="Statues/Statue3" to="Statues/Statue3" method="set_outline_enabled" binds= [ false ]]
+[connection signal="interact" from="Statues/Statue4" to="." method="button_pressed" binds= [ 4 ]]
+[connection signal="start_interactable" from="Statues/Statue4" to="Statues/Statue4" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="Statues/Statue4" to="Statues/Statue4" method="set_outline_enabled" binds= [ false ]]
+[connection signal="interact" from="Statues/Statue5" to="." method="button_pressed" binds= [ 5 ]]
+[connection signal="start_interactable" from="Statues/Statue5" to="Statues/Statue5" method="set_outline_enabled" binds= [ true ]]
+[connection signal="stop_interactable" from="Statues/Statue5" to="Statues/Statue5" method="set_outline_enabled" binds= [ false ]]
