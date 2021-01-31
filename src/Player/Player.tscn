@@ -58,11 +58,11 @@ __meta__ = {
 [node name="Camera" type="Camera" parent="Pivot"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="InteractArea" type="Area" parent="."]
+[node name="InteractArea" type="Area" parent="Pivot"]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape" type="CollisionShape" parent="InteractArea"]
+[node name="CollisionShape" type="CollisionShape" parent="Pivot/InteractArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5 )
 shape = SubResource( 3 )
 
@@ -73,5 +73,5 @@ visible = false
 [node name="Options_Screen" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
 visible = false
-[connection signal="body_entered" from="InteractArea" to="." method="_on_InteractArea_body_entered"]
-[connection signal="body_exited" from="InteractArea" to="." method="_on_InteractArea_body_exited"]
+[connection signal="body_entered" from="Pivot/InteractArea" to="." method="_on_InteractArea_body_entered"]
+[connection signal="body_exited" from="Pivot/InteractArea" to="." method="_on_InteractArea_body_exited"]
