@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
@@ -30,6 +30,10 @@
 [ext_resource path="res://Textures/Emojis/happy-5096.png" type="Texture" id=28]
 [ext_resource path="res://Textures/Emojis/excited-5111.png" type="Texture" id=29]
 [ext_resource path="res://Models/ReadyToUse/PalmTree.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Models/ReadyToUse/NormalTree.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Models/ReadyToUse/Stone_1.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Models/ReadyToUse/Stone_3.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Ilhas/IlhaEscura/IlhaEscuraEnvironment.tres" type="Environment" id=34]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
@@ -265,6 +269,7 @@ size = Vector2( 400, 400 )
 [node name="IlhaEscura" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 34 )
 
 [node name="HTerrain" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -96 )
@@ -283,13 +288,13 @@ texture_set = SubResource( 1 )
 [node name="Emojis-sad" type="Node" parent="HTerrain"]
 
 [node name="Emoji-sad1" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -39.0862, 1.40176, -36.6193 )
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -37.2787, 1.35813, -51.6492 )
 
 [node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad1" index="0"]
 material_override = SubResource( 26 )
 
 [node name="Emoji-sad2" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -37.6012, 1.40176, -37.3285 )
+transform = Transform( 0.538991, 0.84099, -0.0471537, -0.048556, -0.0248662, -0.998511, -0.84091, 0.540478, 0.0274324, -4.64653, 0.215502, -91.3137 )
 
 [node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad2" index="0"]
 material_override = SubResource( 27 )
@@ -430,6 +435,9 @@ material_override = SubResource( 47 )
 [node name="Stone_0" parent="HTerrain/Props" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3283, 0, -51.4166 )
 
+[node name="Stone_1" parent="HTerrain/Props" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3283, 0, -51.4166 )
+
 [node name="PalmTree" parent="HTerrain/Props" instance=ExtResource( 30 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -40.363, 0, -60.041 )
 
@@ -439,8 +447,28 @@ transform = Transform( 0.152283, 0, -0.476246, 0, 0.5, 0, 0.476246, 0, 0.152283,
 [node name="PalmTree3" parent="HTerrain/Props" instance=ExtResource( 30 )]
 transform = Transform( 0.152283, 0, -0.476246, 0, 0.5, 0, 0.476246, 0, 0.152283, -34.2676, 1.09961, -51.2455 )
 
+[node name="PalmTree4" parent="HTerrain/Props" instance=ExtResource( 30 )]
+transform = Transform( 0.477647, 0, -0.147829, 0, 0.5, 0, 0.147829, 0, 0.477647, 5.56371, 1.09961, -51.0114 )
+
+[node name="NormalTree" parent="HTerrain/Props" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.26612, 0.264194, -47.5671 )
+
+[node name="NormalTree2" parent="HTerrain/Props" instance=ExtResource( 31 )]
+transform = Transform( 0.628723, 0, 0.777629, 0, 1, 0, -0.777629, 0, 0.628723, -8.88975, 0.264194, -51.5369 )
+
+[node name="Stone_2" parent="HTerrain/Props" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02903, 3.8147e-06, -52.7272 )
+
+[node name="Stone_3" parent="HTerrain/Props" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97558, 0, -69.1143 )
+
 [node name="Player" parent="HTerrain" instance=ExtResource( 1 )]
 transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 86.0133, 1.99898, 3.32899 )
+
+[node name="SpotLight" type="SpotLight" parent="HTerrain/Player/Pivot" index="1"]
+transform = Transform( -1, 2.98023e-08, -3.8743e-07, 0, 0.997002, 0.0773803, 4.17233e-07, 0.0773803, -0.997002, -0.00294113, 1.19209e-07, -0.00858307 )
+light_color = Color( 0.960784, 0.980392, 0.584314, 1 )
+spot_range = 15.0
 
 [node name="Agua" type="MeshInstance" parent="HTerrain"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, -1, 96 )
@@ -498,3 +526,5 @@ __meta__ = {
 [editable path="HTerrain/Emojis-happy/Emoji-happy8"]
 
 [editable path="HTerrain/Emojis-happy/Emoji-happy9"]
+
+[editable path="HTerrain/Player"]
