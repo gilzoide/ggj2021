@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/sad-face-5088.png-13fcaef94822fa2e4d172970b9498e9d.s3tc.stex"
-path.etc="res://.import/sad-face-5088.png-13fcaef94822fa2e4d172970b9498e9d.etc.stex"
+path.s3tc="res://.import/silence-5094.png-c39a9278b4df329c4f972ab6edad8149.s3tc.stex"
+path.etc="res://.import/silence-5094.png-c39a9278b4df329c4f972ab6edad8149.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Emojis/sad-face-5088.png"
-dest_files=[ "res://.import/sad-face-5088.png-13fcaef94822fa2e4d172970b9498e9d.s3tc.stex", "res://.import/sad-face-5088.png-13fcaef94822fa2e4d172970b9498e9d.etc.stex" ]
+source_file="res://Textures/Emojis/silence-5094.png"
+dest_files=[ "res://.import/silence-5094.png-c39a9278b4df329c4f972ab6edad8149.s3tc.stex", "res://.import/silence-5094.png-c39a9278b4df329c4f972ab6edad8149.etc.stex" ]
 
 [params]
 

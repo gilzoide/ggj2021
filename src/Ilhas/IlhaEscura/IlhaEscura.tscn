@@ -1,26 +1,553 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Ilhas/ChaoTeste.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
 [ext_resource path="res://Ilhas/IlhaEscura/Emoji.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=4]
+[ext_resource path="res://Ilhas/IlhaEscura/terrain/data.hterrain" type="Resource" id=5]
+[ext_resource path="res://Models/ReadyToUse/Stone_0.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Textures/Emojis/emoticon-5107.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Emojis/crying-5113.png" type="Texture" id=8]
+[ext_resource path="res://Ilhas/IlhaEscura/WinCondition.gd" type="Script" id=9]
+[ext_resource path="res://Textures/Emojis/bored-5114.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Emojis/emoticon-5091.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Emojis/emoticon-5098.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Emojis/sad-face-5088.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Emojis/sad-angry-face-5095.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Emojis/sad-face-5099.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Emojis/sad-face-5092.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Emojis/silence-5094.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Emojis/sleepy-5106.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Emojis/surprised-5093.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Emojis/surprised-5100.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Emojis/tired-5115.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Emojis/smile-5103.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Emojis/smile-5090.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Emojis/smile-5089.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Emojis/love-5109.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Emojis/laugh-5104.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Emojis/happy-5097.png" type="Texture" id=27]
+[ext_resource path="res://Textures/Emojis/happy-5096.png" type="Texture" id=28]
+[ext_resource path="res://Textures/Emojis/excited-5111.png" type="Texture" id=29]
+[ext_resource path="res://Models/ReadyToUse/PalmTree.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Models/ReadyToUse/NormalTree.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Models/ReadyToUse/Stone_1.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Models/ReadyToUse/Stone_3.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Ilhas/IlhaEscura/IlhaEscuraEnvironment.tres" type="Environment" id=34]
+[ext_resource path="res://Models/ReadyToUse/LongTree.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Models/ReadyToUse/Stone_2.tscn" type="PackedScene" id=36]
 
-[sub_resource type="ProceduralSky" id=1]
-sky_top_color = Color( 0.0784314, 0.0588235, 0.305882, 1 )
-sky_horizon_color = Color( 0.113725, 0.180392, 0.545098, 1 )
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+mode = 0
+textures = [ [  ], [  ] ]
 
-[sub_resource type="Environment" id=2]
-background_mode = 2
-background_sky = SubResource( 1 )
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 10 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 8 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 11 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 12 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 14 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 13 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 16 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 15 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 17 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 18 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 19 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 20 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=14]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 21 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 22 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 23 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 24 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 25 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=19]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 26 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=20]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 27 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=21]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 28 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 29 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=23]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 7 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_color = Color( 0.0235294, 0.654902, 0.717647, 1 )
+
+[sub_resource type="PlaneMesh" id=25]
+size = Vector2( 400, 400 )
 
 [node name="IlhaEscura" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = ExtResource( 34 )
 
-[node name="Ground2" parent="." instance=ExtResource( 2 )]
+[node name="HTerrain" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -96 )
+script = ExtResource( 4 )
+map_scale = Vector3( 3, 1, 3 )
+_terrain_data = ExtResource( 5 )
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "LowPoly"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.29246 )
+[node name="Emojis-sad" type="Node" parent="HTerrain"]
 
-[node name="Emoji" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.40176, 0 )
+[node name="Emoji-sad1" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -37.2787, 1.35813, -51.6492 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad1" index="0"]
+material_override = SubResource( 2 )
+
+[node name="Emoji-sad2" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( 0.538991, 0.842221, -0.0123362, -0.0485559, 0.0164461, -0.998685, -0.84091, 0.538881, 0.0497591, -3.81842, 0.105992, -90.2433 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad2" index="0"]
+material_override = SubResource( 3 )
+
+[node name="CollisionShape" parent="HTerrain/Emojis-sad/Emoji-sad2" index="1"]
+transform = Transform( 1, -2.68221e-07, -2.23517e-08, 1.49012e-08, -2.01166e-07, 1, 1.49012e-07, -1, -1.86265e-07, 0, 0.143603, 0 )
+
+[node name="Emoji-sad3" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -36.6117, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad3" index="0"]
+material_override = SubResource( 4 )
+
+[node name="Emoji-sad4" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -35.2818, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad4" index="0"]
+material_override = SubResource( 5 )
+
+[node name="Emoji-sad5" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -33.6259, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad5" index="0"]
+material_override = SubResource( 6 )
+
+[node name="Emoji-sad6" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -32.1311, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad6" index="0"]
+material_override = SubResource( 7 )
+
+[node name="Emoji-sad7" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -30.8934, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad7" index="0"]
+material_override = SubResource( 8 )
+
+[node name="Emoji-sad8" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.4549, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad8" index="0"]
+material_override = SubResource( 9 )
+
+[node name="Emoji-sad9" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -28.2321, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad9" index="0"]
+material_override = SubResource( 10 )
+
+[node name="Emoji-sad10" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.9476, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad10" index="0"]
+material_override = SubResource( 11 )
+
+[node name="Emoji-sad11" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.9476, 1.40176, -33.4577 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad11" index="0"]
+material_override = SubResource( 12 )
+
+[node name="Emoji-sad12" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -28.4911, 1.40176, -33.4577 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad12" index="0"]
+material_override = SubResource( 13 )
+
+[node name="Emoji-sad13" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.9671, 1.40176, -33.4577 )
+
+[node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad13" index="0"]
+material_override = SubResource( 14 )
+
+[node name="Emojis-happy" type="Node" parent="HTerrain"]
+
+[node name="Emoji-happy1" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 0.953043, 0, 0.302836, 0, 1, 0, -0.302836, 0, 0.953043, 21.1347, 1.30627, -19.3667 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy1" index="0"]
+material_override = SubResource( 15 )
+
+[node name="Emoji-happy2" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99835, 1.4444, -69.9858 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy2" index="0"]
+material_override = SubResource( 16 )
+
+[node name="Emoji-happy3" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0187617, 0.643761, -15.1311 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy3" index="0"]
+material_override = SubResource( 17 )
+
+[node name="Emoji-happy4" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6222, 1.30627, -42.5649 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy4" index="0"]
+material_override = SubResource( 18 )
+
+[node name="Emoji-happy5" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6222, 1.30627, -44.2364 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy5" index="0"]
+material_override = SubResource( 19 )
+
+[node name="Emoji-happy6" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6222, 1.30627, -35.968 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy6" index="0"]
+material_override = SubResource( 20 )
+
+[node name="Emoji-happy7" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6222, 1.30627, -34.1583 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy7" index="0"]
+material_override = SubResource( 21 )
+
+[node name="Emoji-happy8" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6222, 1.30627, -32.2915 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy8" index="0"]
+material_override = SubResource( 22 )
+
+[node name="Emoji-happy9" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6222, 1.30627, -30.6287 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy9" index="0"]
+material_override = SubResource( 23 )
+
+[node name="Props" type="Node" parent="HTerrain"]
+
+[node name="Stone_0" parent="HTerrain/Props" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3283, 0, -51.4166 )
+
+[node name="Stone_1" parent="HTerrain/Props" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3283, 0, -51.4166 )
+
+[node name="PalmTree" parent="HTerrain/Props" instance=ExtResource( 30 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -40.363, 0, -60.041 )
+
+[node name="PalmTree2" parent="HTerrain/Props" instance=ExtResource( 30 )]
+transform = Transform( 0.152283, 0, -0.476246, 0, 0.5, 0, 0.476246, 0, 0.152283, -27.936, -1.90735e-06, -58.0538 )
+
+[node name="PalmTree3" parent="HTerrain/Props" instance=ExtResource( 30 )]
+transform = Transform( 0.152283, 0, -0.476246, 0, 0.5, 0, 0.476246, 0, 0.152283, -34.2676, 1.09961, -51.2455 )
+
+[node name="PalmTree4" parent="HTerrain/Props" instance=ExtResource( 30 )]
+transform = Transform( 0.477647, 0, -0.147829, 0, 0.5, 0, 0.147829, 0, 0.477647, 5.56371, 1.09961, -51.0114 )
+
+[node name="PalmTree5" parent="HTerrain/Props" instance=ExtResource( 30 )]
+transform = Transform( 0.496667, 0, 0.0576333, 0, 0.5, 0, -0.0576333, 0, 0.496667, 19.3722, 1.09961, -29.0083 )
+
+[node name="NormalTree" parent="HTerrain/Props" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.26612, 0.264194, -47.5671 )
+
+[node name="NormalTree2" parent="HTerrain/Props" instance=ExtResource( 31 )]
+transform = Transform( 0.628723, 0, 0.777629, 0, 1, 0, -0.777629, 0, 0.628723, -8.88975, 0.264194, -51.5369 )
+
+[node name="Stone_2" parent="HTerrain/Props" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02903, 3.8147e-06, -52.7272 )
+
+[node name="Stone_3" parent="HTerrain/Props" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97558, 0, -69.1143 )
+
+[node name="LongTree" parent="HTerrain/Props" instance=ExtResource( 35 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 16.6995, 0, -22.6152 )
+
+[node name="LongTree2" parent="HTerrain/Props" instance=ExtResource( 35 )]
+transform = Transform( 0.6, 0, 0, 0, 0.55, 0, 0, 0, 0.6, 23.5946, 0, -23.2484 )
+
+[node name="LongTree3" parent="HTerrain/Props" instance=ExtResource( 35 )]
+transform = Transform( 0.6, 0, 0, 0, 0.5, 0, 0, 0, 0.6, 21.0632, 0, -19.8072 )
+
+[node name="LongTree4" parent="HTerrain/Props" instance=ExtResource( 35 )]
+transform = Transform( 0.6, 0, 0, 0, 0.5, 0, 0, 0, 0.6, 18.6588, 0, -12.127 )
+
+[node name="Stone_4" parent="HTerrain/Props" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130839, 0, -16.0743 )
+
+[node name="Player" parent="HTerrain" instance=ExtResource( 1 )]
+transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 86.0133, 1.99898, 3.32899 )
+
+[node name="SpotLight" type="SpotLight" parent="HTerrain/Player/Pivot" index="1"]
+transform = Transform( -1, 2.98023e-08, -3.8743e-07, 0, 0.997002, 0.0773803, 4.17233e-07, 0.0773803, -0.997002, -0.00294113, 1.19209e-07, -0.00858307 )
+light_color = Color( 0.960784, 0.980392, 0.584314, 1 )
+spot_range = 15.0
+
+[node name="Agua" type="MeshInstance" parent="HTerrain"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, -1, 96 )
+material_override = SubResource( 24 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="WinCondition" type="Node" parent="."]
+script = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": "Precisa estar depois do nó \"Emojis\""
+}
+[connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad1"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad2"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad3"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad4"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad5"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad6"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad7"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad8"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad9"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad10"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad11"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad12"]
+
+[editable path="HTerrain/Emojis-sad/Emoji-sad13"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy1"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy2"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy3"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy4"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy5"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy6"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy7"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy8"]
+
+[editable path="HTerrain/Emojis-happy/Emoji-happy9"]
+
+[editable path="HTerrain/Player"]
