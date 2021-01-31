@@ -8,4 +8,4 @@ extends StaticBody
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Grid.visible = not PlayerVars.is_all_done()
+	$SolidGrid.visible = not PlayerVars.is_all_done()

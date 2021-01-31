@@ -32,13 +32,7 @@ custom_shader = null
 custom_globalmap_shader = null
 texture_set = SubResource( 1 )
 
-[node name="TreasureTree" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.734978, 2.91109, -3.57808 )
-
-[node name="Circle" parent="TreasureTree" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338385, 1.33123, -0.770929 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Water" type="MeshInstance" parent="."]
 transform = Transform( 400, 0, 0, 0, 1, 0, 0, 0, 400, 0, -2.72918, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 1 )
@@ -81,4 +75,10 @@ transform = Transform( 0.839421, 0, 0.543482, 0, 1, 0, -0.543482, 0, 0.839421, -
 [node name="Boat" parent="." instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.9123, -2, -8.11506 )
 
-[editable path="TreasureTree"]
+[node name="TreasureTree2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.712837, 2.89278, -3.63101 )
+
+[node name="Grid" parent="TreasureTree2" index="8"]
+visible = false
+
+[editable path="TreasureTree2"]
