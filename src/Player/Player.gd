@@ -1,7 +1,9 @@
 extends KinematicBody
 
 const INTERACTABLE_COLLISION_BIT = 2
+const coin_scene = preload("res://Models/ReadyToUse/Coin.tscn")
 
+export(PlayerVars.Ilha) var ilha
 export(float) var speed = 5
 export(float) var rotate_speed = 45
 export var gravity = Vector3.DOWN * 10
