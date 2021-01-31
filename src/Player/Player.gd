@@ -29,11 +29,6 @@ func _input(event: InputEvent) -> void:
 		$Pivot.rotate_x(event.relative.y * mouse_sensitivity * PlayerVars.camera_speed)
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
 	
-	if event.is_action_pressed("any_click"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			get_tree().set_input_as_handled()
-	
 	if event.is_action_pressed("camera_sensitivity_down"):
 		mouse_sensitivity /= 5
 		print("Camera sensitivity: " + str(mouse_sensitivity))
