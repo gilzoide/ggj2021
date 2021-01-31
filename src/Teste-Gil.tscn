@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/checkers2x2.png" type="Texture" id=2]
 [ext_resource path="res://Materials/TestSphereMaterial.tres" type="Material" id=3]
 [ext_resource path="res://Scripts/InteractableBody.gd" type="Script" id=4]
+[ext_resource path="res://Teste-Gil.tres" type="Environment" id=5]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 50, 50 )
@@ -61,20 +62,7 @@ tracks/1/keys = {
 "values": [ 1.0, 0.0, 0.0 ]
 }
 
-[sub_resource type="ProceduralSky" id=13]
-sun_color = Color( 0.901961, 0.85098, 0.0509804, 1 )
-sun_latitude = 113.26
-sun_longitude = 88.82
-sun_energy = 2.0
-
-[sub_resource type="Environment" id=14]
-background_mode = 3
-background_sky = SubResource( 13 )
-background_color = Color( 0.305804, 0.792471, 0.96298, 1 )
-ambient_light_color = Color( 0.309804, 0.807843, 0.976471, 1 )
-
-[sub_resource type="Animation" id=12]
-resource_name = "Sky Color"
+[sub_resource type="Animation" id=11]
 length = 12.0
 loop = true
 tracks/0/type = "value"
@@ -82,7 +70,7 @@ tracks/0/path = NodePath(".:environment:background_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -94,7 +82,7 @@ tracks/1/path = NodePath(".:environment:ambient_light_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -106,60 +94,12 @@ tracks/2/path = NodePath(".:environment:tonemap_exposure")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 2.86 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:environment:background_sky:sun_color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.901961, 0.85098, 0.0509804, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:environment:background_sky:sun_latitude")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 113.26 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath(".:environment:background_sky:sun_longitude")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 88.82 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath(".:environment:background_sky:sun_energy")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 2.0 ]
 }
 
 [node name="Spatial" type="Spatial"]
@@ -237,11 +177,11 @@ autoplay = "Sun Rotate"
 "anims/Sun Rotate" = SubResource( 10 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 14 )
+environment = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
 autoplay = "Sky Color"
-"anims/Sky Color" = SubResource( 12 )
+"anims/Sky Color" = SubResource( 11 )
 [connection signal="interact" from="InteractableSphere" to="InteractableSphere" method="queue_free"]
 [connection signal="start_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ true ]]
 [connection signal="stop_interactable" from="InteractableSphere" to="InteractableSphere" method="set_outline_enabled" binds= [ false ]]
