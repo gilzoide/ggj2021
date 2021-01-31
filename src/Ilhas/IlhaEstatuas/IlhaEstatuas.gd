@@ -48,3 +48,4 @@ func button_pressed(button: int):
 func _island_logic():
 	if pushed.size() == order.size():
 		solved = true
+		$Player.spawn_coin()

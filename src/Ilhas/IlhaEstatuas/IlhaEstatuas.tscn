@@ -29,7 +29,7 @@ textures = [ [  ], [  ] ]
 [sub_resource type="PlaneMesh" id=2]
 material = ExtResource( 12 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=3]
 
 [sub_resource type="BoxShape" id=4]
 
@@ -39,6 +39,7 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.641, 1, 0 )
+ilha = 2
 
 [node name="HTerrain" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -64 )
@@ -136,7 +137,7 @@ script = ExtResource( 7 )
 respawn_position = Vector3( -12.64, 1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="RespawnZone"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Statues" type="Spatial" parent="."]
 
