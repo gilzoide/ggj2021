@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
@@ -6,12 +6,254 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=4]
 [ext_resource path="res://Ilhas/IlhaEscura/terrain/data.hterrain" type="Resource" id=5]
 [ext_resource path="res://Ilhas/IlhaEscura/IlhaEscuraEnvironment.tres" type="Environment" id=6]
+[ext_resource path="res://Textures/Emojis/emoticon-5107.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Emojis/crying-5113.png" type="Texture" id=8]
 [ext_resource path="res://Ilhas/IlhaEscura/WinCondition.gd" type="Script" id=9]
+[ext_resource path="res://Textures/Emojis/bored-5114.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Emojis/emoticon-5091.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Emojis/emoticon-5098.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Emojis/sad-face-5088.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Emojis/sad-angry-face-5095.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Emojis/sad-face-5099.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Emojis/sad-face-5092.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Emojis/silence-5094.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Emojis/sleepy-5106.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Emojis/surprised-5093.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Emojis/surprised-5100.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Emojis/tired-5115.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Emojis/smile-5103.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Emojis/smile-5090.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Emojis/smile-5089.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Emojis/love-5109.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Emojis/laugh-5104.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Emojis/happy-5097.png" type="Texture" id=27]
+[ext_resource path="res://Textures/Emojis/happy-5096.png" type="Texture" id=28]
+[ext_resource path="res://Textures/Emojis/excited-5111.png" type="Texture" id=29]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 mode = 0
 textures = [ [  ], [  ] ]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 10 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 8 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 11 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 12 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 14 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 13 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 16 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 15 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 17 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 18 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 19 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=14]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 20 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 21 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 7 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 22 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 23 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 24 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=19]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 25 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=20]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 26 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=21]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 27 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 28 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=23]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 29 )
+emission_enabled = true
+emission = Color( 0.172549, 1, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
 
 [node name="IlhaEscura" type="Spatial"]
 
@@ -35,10 +277,162 @@ texture_set = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6938, 1.99898, -39.6486 )
 
-[node name="Emojis" type="Node" parent="."]
+[node name="Emojis-sad" type="Node" parent="."]
 
-[node name="Emoji" parent="Emojis" instance=ExtResource( 3 )]
+[node name="Emoji-sad1" parent="Emojis-sad" instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -39.0862, 1.40176, -37.3285 )
+
+[node name="Emoji-sad2" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -37.6012, 1.40176, -37.3285 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad2" index="0"]
+material_override = SubResource( 3 )
+
+[node name="Emoji-sad3" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -36.6117, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad3" index="0"]
+material_override = SubResource( 4 )
+
+[node name="Emoji-sad4" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -35.2818, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad4" index="0"]
+material_override = SubResource( 5 )
+
+[node name="Emoji-sad5" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -33.6259, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad5" index="0"]
+material_override = SubResource( 6 )
+
+[node name="Emoji-sad6" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -32.1311, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad6" index="0"]
+material_override = SubResource( 7 )
+
+[node name="Emoji-sad7" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -30.8934, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad7" index="0"]
+material_override = SubResource( 8 )
+
+[node name="Emoji-sad8" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.4549, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad8" index="0"]
+material_override = SubResource( 9 )
+
+[node name="Emoji-sad9" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -28.2321, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad9" index="0"]
+material_override = SubResource( 10 )
+
+[node name="Emoji-sad10" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.9476, 1.40176, -36.3971 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad10" index="0"]
+material_override = SubResource( 11 )
+
+[node name="Emoji-sad11" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.9476, 1.40176, -33.4577 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad11" index="0"]
+material_override = SubResource( 12 )
+
+[node name="Emoji-sad12" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -28.4911, 1.40176, -33.4577 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad12" index="0"]
+material_override = SubResource( 13 )
+
+[node name="Emoji-sad13" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.9671, 1.40176, -33.4577 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad13" index="0"]
+material_override = SubResource( 14 )
+
+[node name="Emoji-sad14" parent="Emojis-sad" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -31.736, 1.40176, -33.4577 )
+
+[node name="MeshInstance" parent="Emojis-sad/Emoji-sad14" index="0"]
+material_override = SubResource( 15 )
+
+[node name="Emojis-happy" type="Node" parent="."]
+
+[node name="Emoji-happy1" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -37.6298 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy1" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 2 )
+
+[node name="Emoji-happy2" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -39.1757 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy2" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 16 )
+
+[node name="Emoji-happy3" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -41.0102 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy3" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 17 )
+
+[node name="Emoji-happy4" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -42.5649 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy4" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 18 )
+
+[node name="Emoji-happy5" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -44.2364 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy5" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 19 )
+
+[node name="Emoji-happy6" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -35.968 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy6" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 20 )
+
+[node name="Emoji-happy7" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -34.1583 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy7" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 21 )
+
+[node name="Emoji-happy8" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -32.2915 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy8" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 22 )
+
+[node name="Emoji-happy9" parent="Emojis-happy" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -16.6222, 1.30627, -30.6287 )
+should_be_enabled = true
+
+[node name="MeshInstance" parent="Emojis-happy/Emoji-happy9" index="0"]
+transform = Transform( 0.772855, 0, 0.634582, 0, 1, 0, -0.634582, 0, 0.772855, 0, 0, 0 )
+material_override = SubResource( 23 )
 
 [node name="WinCondition" type="Node" parent="."]
 script = ExtResource( 9 )
@@ -46,3 +440,49 @@ __meta__ = {
 "_editor_description_": "Precisa estar depois do nó \"Emojis\""
 }
 [connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
+
+[editable path="Emojis-sad/Emoji-sad1"]
+
+[editable path="Emojis-sad/Emoji-sad2"]
+
+[editable path="Emojis-sad/Emoji-sad3"]
+
+[editable path="Emojis-sad/Emoji-sad4"]
+
+[editable path="Emojis-sad/Emoji-sad5"]
+
+[editable path="Emojis-sad/Emoji-sad6"]
+
+[editable path="Emojis-sad/Emoji-sad7"]
+
+[editable path="Emojis-sad/Emoji-sad8"]
+
+[editable path="Emojis-sad/Emoji-sad9"]
+
+[editable path="Emojis-sad/Emoji-sad10"]
+
+[editable path="Emojis-sad/Emoji-sad11"]
+
+[editable path="Emojis-sad/Emoji-sad12"]
+
+[editable path="Emojis-sad/Emoji-sad13"]
+
+[editable path="Emojis-sad/Emoji-sad14"]
+
+[editable path="Emojis-happy/Emoji-happy1"]
+
+[editable path="Emojis-happy/Emoji-happy2"]
+
+[editable path="Emojis-happy/Emoji-happy3"]
+
+[editable path="Emojis-happy/Emoji-happy4"]
+
+[editable path="Emojis-happy/Emoji-happy5"]
+
+[editable path="Emojis-happy/Emoji-happy6"]
+
+[editable path="Emojis-happy/Emoji-happy7"]
+
+[editable path="Emojis-happy/Emoji-happy8"]
+
+[editable path="Emojis-happy/Emoji-happy9"]
