@@ -3,6 +3,7 @@
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 
 [node name="Menu" type="WindowDialog"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -19,32 +20,41 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Ilha 1" type="Button" parent="VBoxContainer"]
-margin_right = 752.0
-margin_bottom = 20.0
-text = "Ilha 1"
+margin_right = 688.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+text = "Island 1"
 
 [node name="Ilha 2" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 752.0
-margin_bottom = 44.0
-text = "Ilha 2"
+margin_top = 67.0
+margin_right = 688.0
+margin_bottom = 131.0
+size_flags_vertical = 3
+text = "Island 2"
 
 [node name="Ilha 3" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 752.0
-margin_bottom = 68.0
-text = "Ilha 3"
+margin_top = 135.0
+margin_right = 688.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+text = "Island 3"
 
 [node name="Ilha 4" type="Button" parent="VBoxContainer"]
-margin_top = 72.0
-margin_right = 752.0
-margin_bottom = 92.0
-text = "Ilha 4"
+margin_top = 203.0
+margin_right = 688.0
+margin_bottom = 267.0
+size_flags_vertical = 3
+text = "Island 4"
 [connection signal="pressed" from="VBoxContainer/Ilha 1" to="." method="go_to_ilha1"]
 [connection signal="pressed" from="VBoxContainer/Ilha 2" to="." method="go_to_ilha2"]
 [connection signal="pressed" from="VBoxContainer/Ilha 3" to="." method="go_to_ilha3"]
