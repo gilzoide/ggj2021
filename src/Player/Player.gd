@@ -2,9 +2,11 @@ extends KinematicBody
 
 const INTERACTABLE_COLLISION_BIT = 2
 
+export(PlayerVars.Ilha) var ilha
 export(float) var speed = 5
 export(float) var rotate_speed = 45
 export var gravity = Vector3.DOWN * 10
+export(float) var coin_distance = 2
 var velocity = Vector3.ZERO
 var mouse_sensitivity = 0.002
 
@@ -92,3 +94,8 @@ func _on_InteractArea_body_entered(body: PhysicsBody) -> void:
 func _on_InteractArea_body_exited(body: PhysicsBody) -> void:
 	if body == focused_interactable_object:
 		unfocus_object(body)
+
+func spawn_coin() -> void:
+	var coin : Spatial = PlayerVars.coin_scene[ilha].instance()
+	coin.global_transform = global_transform.translated(Vector3.BACK * coin_distance)
+	get_tree().root.call_deferred("add_child", coin)

@@ -153,7 +153,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=15]
+[sub_resource type="SpatialMaterial" id=13]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 22 )
@@ -163,7 +163,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=16]
+[sub_resource type="SpatialMaterial" id=14]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 23 )
@@ -173,7 +173,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="SpatialMaterial" id=15]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 24 )
@@ -183,7 +183,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=16]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 25 )
@@ -193,7 +193,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=19]
+[sub_resource type="SpatialMaterial" id=17]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 26 )
@@ -203,7 +203,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=20]
+[sub_resource type="SpatialMaterial" id=18]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 27 )
@@ -213,7 +213,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=21]
+[sub_resource type="SpatialMaterial" id=19]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 28 )
@@ -223,7 +223,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=22]
+[sub_resource type="SpatialMaterial" id=20]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 29 )
@@ -233,7 +233,7 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=23]
+[sub_resource type="SpatialMaterial" id=21]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 7 )
@@ -243,31 +243,31 @@ emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="CylinderMesh" id=26]
+[sub_resource type="CylinderMesh" id=22]
 top_radius = 5.0
 bottom_radius = 5.0
 height = 1.0
 radial_segments = 32
 rings = 1
 
-[sub_resource type="CylinderShape" id=27]
+[sub_resource type="CylinderShape" id=23]
 radius = 5.0
 height = 1.0
 
-[sub_resource type="PlaneMesh" id=25]
+[sub_resource type="PlaneMesh" id=24]
 size = Vector2( 400, 400 )
 
-[sub_resource type="CylinderMesh" id=28]
+[sub_resource type="CylinderMesh" id=25]
 material = ExtResource( 37 )
 height = 7.0
 
-[sub_resource type="CylinderShape" id=29]
+[sub_resource type="CylinderShape" id=26]
 height = 7.0
 
-[sub_resource type="SpatialMaterial" id=31]
+[sub_resource type="SpatialMaterial" id=27]
 flags_transparent = true
 
-[sub_resource type="SphereMesh" id=30]
+[sub_resource type="SphereMesh" id=28]
 
 [node name="IlhaEscura" type="Spatial"]
 
@@ -369,63 +369,63 @@ transform = Transform( 0.953043, 0, 0.302836, 0, 1, 0, -0.302836, 0, 0.953043, 2
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy1" index="0"]
-material_override = SubResource( 15 )
+material_override = SubResource( 13 )
 
 [node name="Emoji-happy2" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99835, 1.4444, -69.9858 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy2" index="0"]
-material_override = SubResource( 16 )
+material_override = SubResource( 14 )
 
 [node name="Emoji-happy3" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0187617, 0.643761, -15.1311 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy3" index="0"]
-material_override = SubResource( 17 )
+material_override = SubResource( 15 )
 
 [node name="Emoji-happy4" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 1.72727, 2.01185, 0.754059 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy4" index="0"]
-material_override = SubResource( 18 )
+material_override = SubResource( 16 )
 
 [node name="Emoji-happy5" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4392, 1.15831, 14.8802 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy5" index="0"]
-material_override = SubResource( 19 )
+material_override = SubResource( 17 )
 
 [node name="Emoji-happy6" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.83208, 1.30627, -47.4232 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy6" index="0"]
-material_override = SubResource( 20 )
+material_override = SubResource( 18 )
 
 [node name="Emoji-happy7" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.742853, -0.669455, 0, 0.669455, 0.742853, 17.1332, 1.30627, 8.14024 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy7" index="0"]
-material_override = SubResource( 21 )
+material_override = SubResource( 19 )
 
 [node name="Emoji-happy8" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.503367, -0.864073, 0, 0.864073, 0.503367, -1.71606, 0.525756, 20.7191 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy8" index="0"]
-material_override = SubResource( 22 )
+material_override = SubResource( 20 )
 
 [node name="Emoji-happy9" parent="HTerrain/Emojis-happy" instance=ExtResource( 3 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 1.87216, 2.11278, -0.632 )
 should_be_enabled = true
 
 [node name="MeshInstance" parent="HTerrain/Emojis-happy/Emoji-happy9" index="0"]
-material_override = SubResource( 23 )
+material_override = SubResource( 21 )
 
 [node name="Props" type="Node" parent="HTerrain"]
 
@@ -514,15 +514,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130839, 0, -16.0743 )
 
 [node name="MeshInstance" type="MeshInstance" parent="HTerrain/Props/Arco"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-mesh = SubResource( 26 )
+mesh = SubResource( 22 )
 material/0 = ExtResource( 37 )
 
 [node name="CollisionShape" type="CollisionShape" parent="HTerrain/Props/Arco"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 27 )
+shape = SubResource( 23 )
 
 [node name="Player" parent="HTerrain" instance=ExtResource( 1 )]
-transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 88.0428, 1.99898, 2.92019 )
+transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 88.0428, 1.52448, 2.92019 )
+ilha = 1
 
 [node name="SpotLight" type="SpotLight" parent="HTerrain/Player/Pivot" index="1"]
 transform = Transform( -1, 2.98023e-08, -3.8743e-07, 0, 0.997002, 0.0773803, 4.17233e-07, 0.0773803, -0.997002, -0.00294113, 1.19209e-07, -0.00858307 )
@@ -532,7 +533,7 @@ spot_range = 15.0
 [node name="Agua" type="MeshInstance" parent="HTerrain"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, -1, 96 )
 material_override = ExtResource( 38 )
-mesh = SubResource( 25 )
+mesh = SubResource( 24 )
 material/0 = null
 
 [node name="Farol" type="StaticBody" parent="HTerrain"]
@@ -541,7 +542,7 @@ script = ExtResource( 19 )
 
 [node name="Coluna" type="MeshInstance" parent="HTerrain/Farol"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
-mesh = SubResource( 28 )
+mesh = SubResource( 25 )
 material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="HTerrain/Farol"]
@@ -552,12 +553,12 @@ spot_angle = 55.0
 
 [node name="CollisionShape" type="CollisionShape" parent="HTerrain/Farol"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
-shape = SubResource( 29 )
+shape = SubResource( 26 )
 
 [node name="Esfera" type="MeshInstance" parent="HTerrain/Farol"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0 )
-material_override = SubResource( 31 )
-mesh = SubResource( 30 )
+material_override = SubResource( 27 )
+mesh = SubResource( 28 )
 material/0 = null
 
 [node name="WinCondition" type="Node" parent="."]
