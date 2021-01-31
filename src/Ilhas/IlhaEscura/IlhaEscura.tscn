@@ -546,6 +546,7 @@ material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="HTerrain/Farol"]
 transform = Transform( -0.872214, -0.0902171, 0.480732, 0.0888295, 0.937282, 0.337064, -0.48099, 0.336695, -0.809497, 0, 7.17722, 0 )
+visible = false
 spot_range = 50.0
 spot_angle = 55.0
 
@@ -564,8 +565,8 @@ script = ExtResource( 9 )
 __meta__ = {
 "_editor_description_": "Precisa estar depois do nó \"Emojis\""
 }
-[connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
 [connection signal="win_condition_met" from="WinCondition" to="HTerrain/Farol" method="liga"]
+[connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
 
 [editable path="HTerrain/Emojis-sad/Emoji-sad1"]
 
