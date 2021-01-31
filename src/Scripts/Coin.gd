@@ -5,7 +5,12 @@ signal interact()
 signal start_interactable()
 signal stop_interactable()
 
-export(PlayerVars.Ilha) var ilha
+enum Ilha {
+	IlhaCaminho,
+	IlhaEscura,
+	IlhaEstatua,
+}
+export(Ilha) var ilha
 
 export(NodePath) var object_to_outline_path = null
 onready var outline_other_object = get_node("/root/OutlineOtherObject")

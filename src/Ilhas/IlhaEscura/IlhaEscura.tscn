@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Textures/Emojis/silence-5094.png" type="Texture" id=17]
 [ext_resource path="res://Textures/Emojis/sleepy-5106.png" type="Texture" id=18]
 [ext_resource path="res://Ilhas/IlhaEscura/Farol.gd" type="Script" id=19]
-[ext_resource path="res://Models/ReadyToUse/CoinCaminho.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Textures/Emojis/tired-5115.png" type="Texture" id=21]
 [ext_resource path="res://Textures/Emojis/smile-5103.png" type="Texture" id=22]
 [ext_resource path="res://Textures/Emojis/smile-5090.png" type="Texture" id=23]
@@ -523,7 +522,8 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0
 shape = SubResource( 23 )
 
 [node name="Player" parent="HTerrain" instance=ExtResource( 1 )]
-transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 88.0428, 1.99898, 2.92019 )
+transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 88.0428, 1.52448, 2.92019 )
+ilha = 1
 
 [node name="SpotLight" type="SpotLight" parent="HTerrain/Player/Pivot" index="1"]
 transform = Transform( -1, 2.98023e-08, -3.8743e-07, 0, 0.997002, 0.0773803, 4.17233e-07, 0.0773803, -0.997002, -0.00294113, 1.19209e-07, -0.00858307 )
@@ -561,16 +561,13 @@ material_override = SubResource( 27 )
 mesh = SubResource( 28 )
 material/0 = null
 
-[node name="Coin" parent="HTerrain" instance=ExtResource( 20 )]
-transform = Transform( 0.857652, 0, 0.51423, 0, 1, 0, -0.51423, 0, 0.857652, 88.892, 1, 4.65918 )
-
 [node name="WinCondition" type="Node" parent="."]
 script = ExtResource( 9 )
 __meta__ = {
 "_editor_description_": "Precisa estar depois do nó \"Emojis\""
 }
-[connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
 [connection signal="win_condition_met" from="WinCondition" to="HTerrain/Farol" method="liga"]
+[connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
 
 [editable path="HTerrain/Emojis-sad/Emoji-sad1"]
 
