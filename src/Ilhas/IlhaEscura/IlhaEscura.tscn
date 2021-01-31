@@ -522,7 +522,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0
 shape = SubResource( 23 )
 
 [node name="Player" parent="HTerrain" instance=ExtResource( 1 )]
-transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 88.0428, 1.52448, 2.92019 )
+transform = Transform( 0.690819, 0, 0.723027, 0, 1, 0, -0.723027, 0, 0.690819, 88.0428, 1.02597, 2.92019 )
 ilha = 1
 
 [node name="SpotLight" type="SpotLight" parent="HTerrain/Player/Pivot" index="1"]
@@ -567,6 +567,7 @@ __meta__ = {
 "_editor_description_": "Precisa estar depois do nó \"Emojis\""
 }
 [connection signal="win_condition_met" from="WinCondition" to="HTerrain/Farol" method="liga"]
+[connection signal="win_condition_met" from="WinCondition" to="HTerrain/Player" method="spawn_coin"]
 [connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
 
 [editable path="HTerrain/Emojis-sad/Emoji-sad1"]
