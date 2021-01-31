@@ -24,9 +24,6 @@ textures = [ [  ], [  ] ]
 [node name="HTerrain" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, -250 )
 script = ExtResource( 7 )
-ambient_wind = 0.0
-lod_scale = 2.0
-map_scale = Vector3( 1, 1, 1 )
 _terrain_data = ExtResource( 1 )
 chunk_size = 32
 collision_enabled = true
