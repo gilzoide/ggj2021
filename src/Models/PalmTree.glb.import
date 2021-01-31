@@ -11,7 +11,7 @@ dest_files=[ "res://.import/PalmTree.glb-c75ca6c06409cf803fd5a22483cb60a0.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="StaticBody"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

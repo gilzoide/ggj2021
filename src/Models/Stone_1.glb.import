@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Stone_1.glb-c70837431a68df3e2e1cb81406c66ea9.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="StaticBody"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
