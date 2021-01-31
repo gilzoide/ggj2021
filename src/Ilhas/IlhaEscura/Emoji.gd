@@ -7,7 +7,7 @@ signal stop_interactable()
 export(bool) var should_be_enabled = false
 export(Color) var emission_color = Color.green
 export(Color) var disabled_emission_color = Color.black
-onready var interactable_color = lerp(emission_color, disabled_emission_color, 0.5)
+export(Color) var interactable_color = lerp(emission_color, disabled_emission_color, 0.5)
 
 onready var material : SpatialMaterial = $MeshInstance.material_override
 var is_enabled = true

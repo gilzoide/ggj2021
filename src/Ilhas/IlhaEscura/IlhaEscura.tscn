@@ -294,7 +294,7 @@ transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819,
 material_override = SubResource( 26 )
 
 [node name="Emoji-sad2" parent="HTerrain/Emojis-sad" instance=ExtResource( 3 )]
-transform = Transform( 0.538991, 0.84099, -0.0471537, -0.048556, -0.0248662, -0.998511, -0.84091, 0.540478, 0.0274324, -4.64653, 0.215502, -91.3137 )
+transform = Transform( 0.538991, -0.0960072, 0.836822, -0.048556, 0.988289, 0.144659, -0.84091, -0.118603, 0.528018, -3.63641, 1.28037, -90.7278 )
 
 [node name="MeshInstance" parent="HTerrain/Emojis-sad/Emoji-sad2" index="0"]
 material_override = SubResource( 27 )
