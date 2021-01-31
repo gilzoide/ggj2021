@@ -1,15 +1,24 @@
 extends Node
 
+var camera_speed : float = 1
 
-# Declare member variables here. Examples:
-var camera_speed = 1
+enum Ilha {
+	Ilha1,
+	Ilha2,
+	Ilha3,
+	Ilha4,
+}
+
+var ilha_done = {
+	Ilha.Ilha1: false,
+	Ilha.Ilha2: false,
+	Ilha.Ilha3: false,
+	Ilha.Ilha4: false,
+}
+
+func set_ilha_done(i : int) -> void:
+	ilha_done[i] = true
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func is_all_done() -> bool:
+	return ilha_done[Ilha.Ilha1] and ilha_done[Ilha.Ilha2] and ilha_done[Ilha.Ilha3] and ilha_done[Ilha.Ilha4]
