@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Ilhas/IlhaCaminho/Terrain/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://Models/ReadyToUse/Stone_3.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Materials/Water.tres" type="Material" id=9]
 [ext_resource path="res://Models/ReadyToUse/CoinCaminho.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Materials/Arrow.tres" type="Material" id=11]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -998,3 +999,6 @@ material/0 = ExtResource( 11 )
 transform = Transform( -0.401093, -6.9867e-08, 0.0235944, -6.997e-08, 0.401205, -8.81794e-09, -0.00946613, -5.18772e-09, -0.999722, 51.5488, 1.73743, -101.471 )
 mesh = SubResource( 3 )
 material/0 = ExtResource( 11 )
+
+[node name="Player" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -77.3208, 1.30146, 60.1428 )
