@@ -73,10 +73,10 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.588828, -0.149757, 28.
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.6984, -1.05241, 17.931 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -20.0525, 1, -4.02643 )
+transform = Transform( -0.581967, 0, 0.813213, 0, 1, 0, -0.813213, 0, -0.581967, -22.3874, 1, -2.60175 )
 
 [node name="Hubert" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -22.6312, 1.90735e-06, -10.5851 )
+transform = Transform( 0.839421, 0, 0.543482, 0, 1, 0, -0.543482, 0, 0.839421, -20.1051, 1.90735e-06, -9.97915 )
 
 [node name="Boat" parent="." instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.9123, -2, -8.11506 )

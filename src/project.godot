@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Unmapped"
-run/main_scene="res://Teste-Gil.tscn"
+run/main_scene="res://Ilhas/IlhaCentral/CentralIsland.tscn"
 config/icon="res://icon.png"
 
 [autoload]
