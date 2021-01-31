@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Textures/Emojis/silence-5094.png" type="Texture" id=17]
 [ext_resource path="res://Textures/Emojis/sleepy-5106.png" type="Texture" id=18]
 [ext_resource path="res://Ilhas/IlhaEscura/Farol.gd" type="Script" id=19]
+[ext_resource path="res://Models/ReadyToUse/Hubert.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Textures/Emojis/tired-5115.png" type="Texture" id=21]
 [ext_resource path="res://Textures/Emojis/smile-5103.png" type="Texture" id=22]
 [ext_resource path="res://Textures/Emojis/smile-5090.png" type="Texture" id=23]
@@ -37,6 +38,7 @@
 [ext_resource path="res://Models/ReadyToUse/Stone_2.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Models/Stone.material" type="Material" id=37]
 [ext_resource path="res://Materials/Water.tres" type="Material" id=38]
+[ext_resource path="res://Models/ReadyToUse/Boat.tscn" type="PackedScene" id=39]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
@@ -561,14 +563,20 @@ material_override = SubResource( 27 )
 mesh = SubResource( 28 )
 material/0 = null
 
+[node name="Hubert" parent="HTerrain" instance=ExtResource( 20 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 107.775, 0, 19.7984 )
+
+[node name="Boat" parent="HTerrain" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 116.725, -2, 10.9245 )
+
 [node name="WinCondition" type="Node" parent="."]
 script = ExtResource( 9 )
 __meta__ = {
 "_editor_description_": "Precisa estar depois do nó \"Emojis\""
 }
+[connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
 [connection signal="win_condition_met" from="WinCondition" to="HTerrain/Farol" method="liga"]
 [connection signal="win_condition_met" from="WinCondition" to="HTerrain/Player" method="spawn_coin"]
-[connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
 
 [editable path="HTerrain/Emojis-sad/Emoji-sad1"]
 

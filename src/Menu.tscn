@@ -45,12 +45,7 @@ margin_top = 72.0
 margin_right = 752.0
 margin_bottom = 92.0
 text = "Ilha 4"
-
-[node name="Ilha 5" type="Button" parent="VBoxContainer"]
-margin_top = 96.0
-margin_right = 752.0
-margin_bottom = 116.0
-text = "Ilha 5"
 [connection signal="pressed" from="VBoxContainer/Ilha 1" to="." method="go_to_ilha1"]
 [connection signal="pressed" from="VBoxContainer/Ilha 2" to="." method="go_to_ilha2"]
 [connection signal="pressed" from="VBoxContainer/Ilha 3" to="." method="go_to_ilha3"]
+[connection signal="pressed" from="VBoxContainer/Ilha 4" to="." method="go_to_ilha_central"]
