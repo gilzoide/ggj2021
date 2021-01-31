@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Menus/CameraSpeedLabel.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Menus/OptionsScreen.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = SubResource( 5 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 345.0
+margin_top = 77.0
+margin_right = 757.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "OPÇÕES"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 174.617
+margin_top = 293.93
+margin_right = 429.617
+margin_bottom = 322.93
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Velocidade da Câmera"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 497.198
+margin_top = 303.297
+margin_right = 537.198
+margin_bottom = 322.297
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "a"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlusSensitivity" type="Button" parent="Label3"]
+margin_left = 60.0
+margin_top = -3.0
+margin_right = 80.0
+margin_bottom = 17.0
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinusSensitivity" type="Button" parent="Label3"]
+margin_left = -40.0
+margin_top = -3.0
+margin_right = -23.0
+margin_bottom = 17.0
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Button" parent="."]
+margin_left = 442.0
+margin_top = 465.0
+margin_right = 660.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 6 )
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="ready" from="Label3" to="." method="_on_Label3_ready"]
+[connection signal="pressed" from="Label3/PlusSensitivity" to="." method="_on_PlusSensitivity_pressed"]
+[connection signal="pressed" from="Label3/MinusSensitivity" to="." method="_on_MinusSensitivity_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]

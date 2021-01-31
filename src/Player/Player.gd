@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		$Pivot.rotate_x(event.relative.y * mouse_sensitivity)
+		rotate_y(-event.relative.x * mouse_sensitivity * PlayerVars.camera_speed)
+		$Pivot.rotate_x(event.relative.y * mouse_sensitivity * PlayerVars.camera_speed)
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
 	
 	if event.is_action_pressed("any_click"):
@@ -47,6 +47,8 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().paused = true
+		$Pause_Screen.show()
 
 func get_input(_delta):
 	var vy = velocity.y
