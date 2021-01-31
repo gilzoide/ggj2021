@@ -1,8 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scripts/Menus/ContinueButton.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Menus/ExitButton.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Menus/OptionsButton.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Menus/PauseScreen.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/Roboto-Bold.ttf"
@@ -37,6 +35,7 @@ font_data = SubResource( 7 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,6 +52,9 @@ text = "PAUSE"
 align = 1
 valign = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Continue" type="Button" parent="."]
 margin_left = 442.0
@@ -61,7 +63,6 @@ margin_right = 660.0
 margin_bottom = 259.0
 custom_fonts/font = SubResource( 4 )
 text = "Continuar"
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,7 +74,6 @@ margin_right = 660.0
 margin_bottom = 411.0
 custom_fonts/font = SubResource( 6 )
 text = "Sair"
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -85,7 +85,9 @@ margin_right = 660.0
 margin_bottom = 335.0
 custom_fonts/font = SubResource( 8 )
 text = "Opções"
-script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]

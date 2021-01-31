@@ -1,9 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Menus/CameraSpeedLabel.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Menus/PlusSensitivity.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Menus/MinusSensitivity.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Menus/OptionsReturn.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Menus/OptionsScreen.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/Roboto-Bold.ttf"
@@ -41,6 +39,7 @@ font_data = SubResource( 5 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,7 +74,7 @@ margin_right = 537.198
 margin_bottom = 322.297
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "100%"
+text = "a"
 align = 1
 valign = 1
 script = ExtResource( 1 )
@@ -89,7 +88,6 @@ margin_top = -3.0
 margin_right = 80.0
 margin_bottom = 17.0
 text = "+"
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -100,7 +98,6 @@ margin_top = -3.0
 margin_right = -23.0
 margin_bottom = 17.0
 text = "-"
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -112,7 +109,10 @@ margin_right = 660.0
 margin_bottom = 500.0
 custom_fonts/font = SubResource( 6 )
 text = "Voltar"
-script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="ready" from="Label3" to="." method="_on_Label3_ready"]
+[connection signal="pressed" from="Label3/PlusSensitivity" to="." method="_on_PlusSensitivity_pressed"]
+[connection signal="pressed" from="Label3/MinusSensitivity" to="." method="_on_MinusSensitivity_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]

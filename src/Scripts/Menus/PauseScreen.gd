@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -10,11 +10,22 @@ extends Button
 func _ready():
 	pass # Replace with function body.
 
-func _gui_input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		get_parent().hide()
-		get_node("../../Pause_Screen").show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Continue_pressed():
+	self.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().paused = false
+
+
+func _on_Exit_pressed():
+	get_tree().quit()
+
+
+func _on_Options_pressed():
+	self.hide()
+	get_node("../Options_Screen").show()

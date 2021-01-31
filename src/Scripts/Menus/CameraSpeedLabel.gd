@@ -6,7 +6,7 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	text = str(PlayerVars.camera_speed * 100) + "%"
+	pass
 
 func refresh():
 	text = str(PlayerVars.camera_speed * 100) + "%"
