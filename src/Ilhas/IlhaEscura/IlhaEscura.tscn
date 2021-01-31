@@ -283,6 +283,11 @@ texture_set = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6938, 1.99898, -39.6486 )
 
+[node name="Lanterna" type="SpotLight" parent="Player/Pivot" index="1"]
+transform = Transform( -1, 0, -3.25841e-07, -6.3429e-08, 0.98087, 0.194662, 3.19608e-07, 0.194662, -0.98087, 0, 0, 0 )
+light_color = Color( 0.945098, 1, 0.454902, 1 )
+spot_range = 15.0
+
 [node name="Emojis-sad" type="Node" parent="."]
 
 [node name="Emoji-sad1" parent="Emojis-sad" instance=ExtResource( 3 )]
@@ -452,6 +457,8 @@ material_override = SubResource( 24 )
 mesh = SubResource( 25 )
 material/0 = null
 [connection signal="win_condition_met" from="WinCondition" to="WinCondition" method="print_teste"]
+
+[editable path="Player"]
 
 [editable path="Emojis-sad/Emoji-sad1"]
 
