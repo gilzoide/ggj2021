@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/count_doubloons (online-audio-converter.com).wav-ca9b13427305d88a0aa1d83ab33532d2.sample"
+
+[deps]
+
+source_file="res://SoundEffects/Dialogue/count_doubloons (online-audio-converter.com).wav"
+dest_files=[ "res://.import/count_doubloons (online-audio-converter.com).wav-ca9b13427305d88a0aa1d83ab33532d2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

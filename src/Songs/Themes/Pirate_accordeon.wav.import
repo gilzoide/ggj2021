@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pirate_accordeon.wav-94083a13361b47aa49f7249e28a38d6c.sample"
+
+[deps]
+
+source_file="res://Songs/Themes/Pirate_accordeon.wav"
+dest_files=[ "res://.import/Pirate_accordeon.wav-94083a13361b47aa49f7249e28a38d6c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

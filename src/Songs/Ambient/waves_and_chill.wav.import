@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/waves_and_chill.wav-7a0eedfa7e284d855afdfaab20369148.sample"
+
+[deps]
+
+source_file="res://Songs/Ambient/waves_and_chill.wav"
+dest_files=[ "res://.import/waves_and_chill.wav-7a0eedfa7e284d855afdfaab20369148.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

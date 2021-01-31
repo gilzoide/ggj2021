@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menu_exit.wav-65d3417cd82830a2e742f73163ebf0d0.sample"
+
+[deps]
+
+source_file="res://SoundEffects/menu_exit.wav"
+dest_files=[ "res://.import/menu_exit.wav-65d3417cd82830a2e742f73163ebf0d0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

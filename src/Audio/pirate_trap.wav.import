@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pirate_trap.wav-5945ea4f90888b97d2b2bdcb1bcb06a8.sample"
+
+[deps]
+
+source_file="res://Audio/pirate_trap.wav"
+dest_files=[ "res://.import/pirate_trap.wav-5945ea4f90888b97d2b2bdcb1bcb06a8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
