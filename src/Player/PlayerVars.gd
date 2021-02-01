@@ -25,10 +25,10 @@ var coin_scene = {
 	Ilha.IlhaEstatua: coin_estatua,
 }
 
-const ilha_caminho = preload("res://Ilhas/IlhaCaminho/IlhaCaminho.tscn")
-const ilha_escura = preload("res://Ilhas/IlhaEscura/IlhaEscura.tscn")
-const ilha_estatua = preload("res://Ilhas/IlhaEstatuas/IlhaEstatuas.tscn")
-const ilha_central = preload("res://Ilhas/IlhaCentral/CentralIsland.tscn")
+const ilha_caminho = "res://Ilhas/IlhaCaminho/IlhaCaminho.tscn"
+const ilha_escura = "res://Ilhas/IlhaEscura/IlhaEscura.tscn"
+const ilha_estatua = "res://Ilhas/IlhaEstatuas/IlhaEstatuas.tscn"
+const ilha_central = "res://Ilhas/IlhaCentral/CentralIsland.tscn"
 var ilha_scene = {
 	Ilha.IlhaCaminho: ilha_caminho,
 	Ilha.IlhaEscura: ilha_escura,
@@ -43,4 +43,4 @@ func is_all_done() -> bool:
 	return ilha_done[Ilha.IlhaCaminho] and ilha_done[Ilha.IlhaEscura] and ilha_done[Ilha.IlhaEstatua]
 
 func viaja_ilha(ilha : int) -> void:
-	get_tree().change_scene_to(ilha_scene[ilha])
+	get_tree().change_scene(ilha_scene[ilha])
