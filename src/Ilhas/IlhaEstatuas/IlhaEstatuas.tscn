@@ -144,6 +144,7 @@ shape = SubResource( 3 )
 transform = Transform( 0.984583, 0, -0.17492, 0, 1, 0, 0.17492, 0, 0.984583, 4.564, 0, -21.102 )
 collision_layer = 5
 script = ExtResource( 6 )
+object_to_outline_path = NodePath("Statue/Button")
 
 [node name="Statue" parent="Statues/Statue0" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 4.29153e-05, 0, 0.000299454 )
@@ -156,6 +157,7 @@ shape = SubResource( 4 )
 transform = Transform( 0.597177, 0, -0.802109, 0, 1, 0, 0.802109, 0, 0.597177, 37.701, 0, -40.185 )
 collision_layer = 5
 script = ExtResource( 6 )
+object_to_outline_path = NodePath("Statue/Button")
 
 [node name="CollisionShape" type="CollisionShape" parent="Statues/Statue1"]
 transform = Transform( 1.2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.75, 0.25 )
@@ -168,6 +170,7 @@ transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0 )
 transform = Transform( -0.999671, 0, 0.0256709, 0, 1, 0, -0.0256709, 0, -0.999671, -5.245, 2.748, 30.91 )
 collision_layer = 5
 script = ExtResource( 6 )
+object_to_outline_path = NodePath("Statue/Button")
 
 [node name="CollisionShape" type="CollisionShape" parent="Statues/Statue2"]
 transform = Transform( 1.2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.75, 0.25 )
@@ -179,6 +182,7 @@ shape = SubResource( 4 )
 transform = Transform( -0.610228, 0, -0.792226, 0, 1, 0, 0.792226, 0, -0.610228, 17.99, 0.412, 20.884 )
 collision_layer = 5
 script = ExtResource( 6 )
+object_to_outline_path = NodePath("Statue/Button")
 
 [node name="CollisionShape" type="CollisionShape" parent="Statues/Statue3"]
 transform = Transform( 1.2, 0, 0, 0, 2, 0, 5.96046e-08, 0, 1, -1.90735e-06, 1.75, 0.25 )
@@ -191,6 +195,7 @@ transform = Transform( 1, 0, 3.8743e-07, 0, 1, 0, -3.27826e-07, 0, 1, 0.00036239
 transform = Transform( 0.414233, 0, 0.910171, 0, 1, 0, -0.910171, 0, 0.414233, -24.244, 0, -17.387 )
 collision_layer = 5
 script = ExtResource( 6 )
+object_to_outline_path = NodePath("Statue/Button")
 
 [node name="CollisionShape" type="CollisionShape" parent="Statues/Statue4"]
 transform = Transform( 1.2, 0, 0, 0, 2, 0, -2.98023e-08, 0, 1, 9.53674e-07, 1.75, 0.249998 )
@@ -203,6 +208,7 @@ transform = Transform( 1, 0, -4.76837e-07, 0, 1, 0, 4.76837e-07, 0, 1, 0.0002317
 transform = Transform( -0.988777, 0, 0.149397, 0, 1, 0, -0.149397, 0, -0.988777, -6.911, 0, 16.511 )
 collision_layer = 5
 script = ExtResource( 6 )
+object_to_outline_path = NodePath("Statue/Button")
 
 [node name="CollisionShape" type="CollisionShape" parent="Statues/Statue5"]
 transform = Transform( 1.2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.75, 0.25 )
@@ -234,3 +240,15 @@ transform = Transform( 0.0871558, 0, 0.996195, 0, 1, 0, -0.996195, 0, 0.0871558,
 [connection signal="interact" from="Statues/Statue5" to="." method="button_pressed" binds= [ 5 ]]
 [connection signal="start_interactable" from="Statues/Statue5" to="Statues/Statue5" method="set_outline_enabled" binds= [ true ]]
 [connection signal="stop_interactable" from="Statues/Statue5" to="Statues/Statue5" method="set_outline_enabled" binds= [ false ]]
+
+[editable path="Statues/Statue0/Statue"]
+
+[editable path="Statues/Statue1/Statue"]
+
+[editable path="Statues/Statue2/Statue"]
+
+[editable path="Statues/Statue3/Statue"]
+
+[editable path="Statues/Statue4/Statue"]
+
+[editable path="Statues/Statue5/Statue"]
