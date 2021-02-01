@@ -1,7 +1,5 @@
 extends KinematicBody
 
-const INTERACTABLE_COLLISION_BIT = 2
-
 enum Ilha {
 	IlhaCaminho,
 	IlhaEscura,
@@ -95,11 +93,11 @@ func unfocus_object(_body : Node) -> void:
 	focused_interactable_object = null
 
 func _on_InteractArea_body_entered(body: PhysicsBody) -> void:
-	if body.get_collision_layer_bit(INTERACTABLE_COLLISION_BIT):
+	if body and body.has_signal("interact"):
 		focus_object(body)
 
 func _on_InteractArea_body_exited(body: PhysicsBody) -> void:
-	if body == focused_interactable_object:
+	if body and body == focused_interactable_object:
 		unfocus_object(body)
 
 func spawn_coin() -> void:
