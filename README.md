@@ -1,5 +1,14 @@
-# ggj2021
-Game made for Global Game Jam Online 2021
+# Unmapped
+A player with a computer and a player with the manual combined to find a
+treasure. Search for coins in the archipelago to open the door to a huge
+treasure. To help you solve the puzzles, you have the diary of the one who hid
+it.
+
+Don't let the other player see what you are doing and discuss to achieve the chalenge!
+
+Play it [here](https://arsart.itch.io/unmapped)!
+
+Game made for Global Game Jam Online 2021.
 
 
 ## Assets utilizados
